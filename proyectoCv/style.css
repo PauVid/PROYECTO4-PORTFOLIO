@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kameron:wght@400..700&display=swap');
+
+
+:root{
+
+  /* TYPOGRAPHY */
+
+  --pv-primary-font: "Kameron", sans-serif;
+  --pv-secondary-font: "Oswald", sans-serif;
+
+  --pv-title-font: var(--pv-primary-font);
+  --pv-text-font: var(--pv-secondary-font);
+
+  /* SPACING */
+
+  --pv-padding-xs: 10px;
+  --pv-padding-s: 20px;
+  --pv-padding-m: 30px;
+  --pv-padding-l: 40px;
+  --pv-padding-xl: 50px;
+
+  --pv-margin-xs: 10px;
+  --pv-margin-s: 20px;
+  --pv-margin-m: 30px;
+  --pv-margin-l: 40px;
+  --pv-margin-xl: 50px;
+
+  --pv-gap-xs: 10px;
+  --pv-gap-s: 20px;
+  --pv-gap-m: 30px;
+  --pv-gap-l: 40px;
+  --pv-gap-xl: 50px;
+
+  /* BORDER */
+
+  --pv-borderRad: 10px;
+  --pv-borderRadical: 50%;
+
+  /* COOLORS */
+
+  --pv-primary-color: #242424;
+  --pv-secondary-color: #F1F1F1;
+  --pv-accent-color: #C2FAFA;
+
+  --pv-backgroundColor: var(--pv-primary-color);
+  --pv-elementsColor: var(--pv-secondary-color);
+  --pv-detailsColor: var(--pv-accent-color);
+
+}
+
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: var(--pv-backgroundColor);
+  height: 150svh;
+}
+
+.header__icons {
+  background-color: var(--pv-elementsColor);
+  border-radius: var(--pv-borderRad);
+  width: 90px;
+  height: 25px;
+}
+
+.header__logo {
+  background-color: var(--pv-elementsColor);
+  border-radius: var(--pv-borderRadical);
+  width: 50px;
+  height: 50px;
+}
+
+.header__diversion{
+  display: flex;
+  flex-direction: row;
+  gap: var(--pv-gap-m);
+  justify-content: center;
+  align-items: center;
+  margin-top: var(--pv-margin-m);
+}
+
+.icons__diversion{
+  display: flex;
+  flex-direction: row;
+  gap: var(--pv-gap-s);
+}
+
+/* FIRST SECTION */
+
+.firstSection {
+  display: flex;
+  flex-direction: row;
+  gap: var(--pv-gap-m);
+  justify-content: center;
+  align-items: center;
+  margin-top: var(--pv-margin-xl);
+}
+
+.firstElements {
+  background-color: var(--pv-elementsColor);
+  border-radius: var(--pv-borderRad);
+  height: 350px;
+  min-height: 350px;
+  min-width: 250px;
+  max-width: 300px;
+}
+
+.secondSectionBanner {
+  background-color: var(--pv-elementsColor);
+  border-radius: var(--pv-borderRad);
+  height: 350px;
+  width: 250px;
+}
+
+.secondSection,
+.fourthSection {
+  display: flex;
+  justify-content: center;
+  gap: var(--pv-gap-xl);
+  margin-top: var(--pv-margin-xl);
+}
+
+.secondSectionBGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.secondSectionText,
+.divFourthSectionText,
+.divFourthSectionText2 {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--pv-gap-xs);
+}
+
+.secondSectionText > :first-child,
+.divFourthSectionText > :first-child {
+  width: 80px;
+}
+
+.secondSectionTextLine,
+.fourthSectionTextLine {
+  background-color: var(--pv-elementsColor);
+  border-radius: var(--pv-borderRad);
+  height: 20px;
+  width: 250px;
+}
+
+.secondSectionImage {
+  background-color: var(--pv-elementsColor);
+  border-radius: var(--pv-borderRad);
+  height: 150px;
+  width: 250px;
+}
+
+
+.secondSectionBanner,
+.secondSectionTextLine,
+.secondSectionImage,
+.firstElements,
+.header__logo,
+.header__icons,
+.thirdSectionBanner,
+.thirdSectionBanner2,
+.fourthSectionTextLine  {
+  cursor: pointer;
+  transition: all .23s;
+}
+
+.secondSectionBanner:hover,
+.secondSectionTextLine:hover,
+.secondSectionImage:hover,
+.firstElements:hover,
+.header__logo:hover,
+.header__icons:hover,
+.thirdSectionBanner:hover,
+.thirdSectionBanner2:hover,
+.fourthSectionTextLine:hover {
+  transform: scale(1.1);
+}
+
+.thirdSection {
+  display: flex;
+  justify-content: center;
+  gap: var(--pv-gap-xl);
+  margin-top: var(--pv-margin-xl);
+}
+
+.thirdSectionBanner {
+  background-color: var(--pv-elementsColor);
+  border-radius: var(--pv-borderRad);
+  height: 150px;
+  width: 350px;
+}
+
+.thirdSectionBanner2 {
+  background-color: var(--pv-elementsColor);
+  border-radius: var(--pv-borderRad);
+  height: 150px;
+  width: 150px;
+}
