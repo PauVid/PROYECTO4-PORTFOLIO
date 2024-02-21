@@ -1,8 +1,4 @@
-import './style.css'
-
-
-
-//!  FALTA ARREGLAR EL CAMBIO DE LIGHT A DARK MODE
+import 'proyectoCv/style.css'
 
 const toggleMode = () => {
 
