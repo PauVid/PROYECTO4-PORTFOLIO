@@ -129,8 +129,14 @@ const firstSection = () => {
   for(let i = 0; i < 3; i++){
     num++
     const firstSectionElement = document.createElement("div");
+    const divText = document.createElement("div");
+    const text = document.createElement("h3");
+    const btn = document.createElement("button");
     firstSectionElement.className = `firstImg${num}`;
 
+    divText.append(text);
+    divText.append(btn);
+    firstSectionElements.append(divText);
     firstSectionElements.append(firstSectionElement);
   }
 
@@ -199,37 +205,6 @@ const thirdSection = () => {
   page.append(divThirdSection);
 }
 
-const fourthSection = () => {
-
-  const page = document.querySelector("#app");
-
-  const divFourthSection = document.createElement("div");
-  divFourthSection.className = "fourthSection";
-
-  const divFourthSectionText = document.createElement("div");
-  divFourthSectionText.className = "divFourthSectionText";
-  const divFourthSectionText2 = document.createElement("div");
-  divFourthSectionText2.className = "divFourthSectionText2";
-
-  for(let i = 0; i < 5; i++){
-    const fourthSectionTextLine = document.createElement("div");
-    fourthSectionTextLine.className = "fourthSectionTextLine";
-
-    divFourthSectionText2.append(fourthSectionTextLine);
-  }
-
-  for(let i = 0; i < 5; i++){
-    const fourthSectionTextLine = document.createElement("div");
-    fourthSectionTextLine.className = "fourthSectionTextLine";
-
-    divFourthSectionText.append(fourthSectionTextLine);
-  }
-
-  divFourthSection.append(divFourthSectionText);
-  divFourthSection.append(divFourthSectionText2);
-  page.append(divFourthSection);
-
-}
 
 
 headerCv();
