@@ -42,6 +42,7 @@
   --pv-primary-color: #242424;
   --pv-secondary-color: #F1F1F1;
   --pv-accent-color: #C2FAFA;
+  --pv-cardBg: #F9FAFF;
 
   --pv-backgroundColor: var(--pv-primary-color);
   --pv-backgroundColorLight: var(--pv-secondary-color);
@@ -144,10 +145,11 @@ body {
   gap: var(--pv-gap-m);
   justify-content: center;
   align-items: center;
-  margin-top: var(--pv-margin-xl);
+  margin: var(--pv-margin-xl);
+
 }
 
-.firstImg1 {
+.card__image1 > div {
   background: url("./assets/imgs/section1_1.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -158,7 +160,7 @@ body {
   max-width: 300px;
   border-radius: var(--pv-borderRad);
 }
-.firstImg2 {
+.card__image2 > div {
   background: url("./assets/imgs/section1_2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -169,7 +171,7 @@ body {
   max-width: 300px;
   border-radius: var(--pv-borderRad);
 }
-.firstImg3 {
+.card__image3 > div {
   background: url("./assets/imgs/section1_3.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -180,6 +182,79 @@ body {
   max-width: 300px;
   border-radius: var(--pv-borderRad);
 }
+
+.firstSection1,
+.firstSection2,
+.firstSection3 {
+  width: 80%;
+  align-items: center;
+  display: flex;
+  flex-direction: column-reverse;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--pv-borderRad);
+}
+
+.card__image1,
+.card__image2,
+.card__image3 {      
+  width: 100%;
+  transition: all 0.3s;
+}
+
+.card__image1:hover,
+.card__image2:hover,
+.card__image3:hover {      
+  transform: scale(1.2);
+}
+
+.card__image1 > div,
+.card__image2 > div,
+.card__image3 > div {
+  max-width: 100%;
+  height: 100%;
+}
+
+.card__overlay {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  z-index: 1;      
+  border-radius: 45px 0 0 0;    
+  background-color: var(--pv-cardBg);      
+  transform: translateY(100%);
+  transition: .2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px;
+  gap: 2px;
+}
+
+.firstSection1:hover .card__overlay,
+.firstSection2:hover .card__overlay,
+.firstSection3:hover .card__overlay {
+  transform: translateY(0);
+}
+
+.card__overlay h3{
+  font-size: 16px;
+  color: #242424;
+  text-transform: uppercase;
+  font-family: var(--pv-title-font);
+}
+
+.card__overlay button {
+  font-size: 14px;
+  color: #242424;
+  background-color: transparent;
+  font-family: var(--pv-text-font);
+  border: none;
+}
+
+
+
 
 /* SECOND SECTION */
 
@@ -299,9 +374,6 @@ body {
 
 .secondSectionBanner:hover,
 .secondSectionImage:hover,
-.firstImg1:hover,
-.firstImg2:hover,
-.firstImg3:hover, 
 .header__logo:hover,
 .header__icons:hover,
 .thirdSectionBanner:hover,
@@ -349,6 +421,8 @@ body {
 @media (max-width: 760px) {
   .firstSection {
     flex-direction: column;
+    margin: 0;
+    margin-top: var(--pv-margin-xl);
   }
 
   .firstImg1,

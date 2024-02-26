@@ -1,4 +1,4 @@
-import 'proyectoCv/style.css'
+
 
 const toggleMode = () => {
 
@@ -129,20 +129,32 @@ const firstSection = () => {
   for(let i = 0; i < 3; i++){
     num++
     const firstSectionElement = document.createElement("div");
-    const divText = document.createElement("div");
+    const firstSectionImages = document.createElement("div");
+    const firstSectionImage = document.createElement("div");
+    const divTextOverlay = document.createElement("div");
     const text = document.createElement("h3");
     const btn = document.createElement("button");
-    firstSectionElement.className = `firstImg${num}`;
+    firstSectionImage.className = `firstImg${num}`;
+    firstSectionImages.className = `card__image${num}`;
+    // divTextOverlay.className = `descriptionFirst${num}`;
+    divTextOverlay.className = "card__overlay";
+    firstSectionElement.className = `firstSection${num}`;
 
-    divText.append(text);
-    divText.append(btn);
-    firstSectionElements.append(divText);
+    text.textContent = `${num} Project`;
+    btn.textContent = "See More";
+
+    divTextOverlay.append(text);
+    divTextOverlay.append(btn);
+    firstSectionImages.append(firstSectionImage);
+    firstSectionElement.append(firstSectionImages);
+    firstSectionElement.append(divTextOverlay);
     firstSectionElements.append(firstSectionElement);
   }
 
   page.append(firstSectionElements)
 
 }
+
 const secondSection = () => {
   const page = document.querySelector("#app");
 
