@@ -31,6 +31,7 @@ const toggleMode = () => {
   var lightText3 = document.querySelector(".fourthSectionText2");
   lightText3.classList.add("darkmode__text");
 
+
   lightbtn.addEventListener("click", () => {
 
     if (lightbtn.classList.contains("dark__mode")){
@@ -172,12 +173,12 @@ const secondSection = () => {
 
   const secondSectionTextTitle = document.createElement("h3");
   secondSectionTextTitle.className = "secondSectionTextTitle";
-  secondSectionTextTitle.textContent = "Lorem ipsum";
+  secondSectionTextTitle.textContent = "Pau Vidal";
   secondSectionText.append(secondSectionTextTitle)
 
   const secondSectionTextLine = document.createElement("p");
   secondSectionTextLine.className = "secondSectionTextLine";
-  secondSectionTextLine.textContent = "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth."
+  secondSectionTextLine.textContent = "FullStack Dev with a bachelor's in Graphic Design"
   secondSectionText.append(secondSectionTextLine);
 
 
@@ -191,17 +192,73 @@ const secondSection = () => {
   secondSectionElements.append(secondSectionBGroup)
   page.append(secondSectionElements);
 };
+
+const textSectionEffect = () => {
+
+  const page = document.querySelector("#app");
+
+
+  const divEffectPara = document.createElement("div");
+  const effectParaf = document.createElement("p");
+  const effectSpan1 = document.createElement("span");
+  const effectSpan2 = document.createElement("span");
+  const effectSpan3 = document.createElement("span");
+
+  effectSpan1.textContent = "¡Conocimiento en ";
+  effectSpan2.textContent = "Diseño";
+  effectSpan3.textContent = "!";
+
+  effectParaf.append(effectSpan1);
+  effectParaf.append(effectSpan2);
+  effectParaf.append(effectSpan3);
+  divEffectPara.append(effectParaf);
+
+  divEffectPara.className = "textEffect"
+  page.append(divEffectPara);
+  
+  const WORDS = [
+    'Diseño',
+    'HTML',
+    'CSS6',
+    'JavaScript',
+  ]
+
+  let count = 0
+  const SWAPPER = document.querySelector('.textEffect span:nth-of-type(2)')
+  const SWAP = () => {
+    if (!document.startViewTransition) {
+      SWAPPER.innerText = WORDS[(count += 1) % WORDS.length]
+    } else {
+      document.startViewTransition(() => {
+        SWAPPER.innerText = WORDS[(count += 1) % WORDS.length]  
+      })
+    }
+  }
+
+  setInterval(SWAP, 2000)
+
+}
+
+
+
 const thirdSection = () => {
   const page = document.querySelector("#app");
 
   const divThirdSection = document.createElement("div");
   divThirdSection.className = "thirdSection";
+
+  const divContent = document.createElement("div");
+  divContent.className = "thirdSectionContent";
+
   const thirdSectionBanner = document.createElement("div");
   thirdSectionBanner.className = "thirdSectionBanner";
 
   const fourthSectionText = document.createElement("p");
   fourthSectionText.className = "fourthSectionText";
   fourthSectionText.textContent = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum";
+
+  const divContent2 = document.createElement("div");
+  divContent2.className = "thirdSectionContent2";
 
   const thirdSectionBanner2 = document.createElement("div");
   thirdSectionBanner2.className = "thirdSectionBanner2";
@@ -210,17 +267,21 @@ const thirdSection = () => {
   fourthSectionText2.className = "fourthSectionText2";
   fourthSectionText2.textContent = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
 
-  divThirdSection.append(thirdSectionBanner);
-  divThirdSection.append(fourthSectionText);
-  divThirdSection.append(thirdSectionBanner2);
-  divThirdSection.append(fourthSectionText2);
+  divContent.append(fourthSectionText2);
+  divContent.append(thirdSectionBanner2);
+  divContent2.append(fourthSectionText);
+  divContent2.append(thirdSectionBanner);
+  divThirdSection.append(divContent);
+  divThirdSection.append(divContent2);
   page.append(divThirdSection);
 }
 
 
 
 headerCv();
-firstSection();
 secondSection();
+textSectionEffect()
+firstSection();
 thirdSection(); 
 toggleMode()
+
