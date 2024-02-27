@@ -68,6 +68,12 @@ body {
   padding-bottom: 100px;
 }
 
+a{
+  list-style: none;
+  text-decoration: none;
+  color: var(--pv-elementsColor);
+}
+
 .light__body {
   background-color: var(--pv-backgroundColorLight);
 }

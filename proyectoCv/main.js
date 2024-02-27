@@ -92,17 +92,24 @@ const headerCv = () => {
   const logoHeader = document.createElement("img");
   logoHeader.className = "header__logo";
   logoHeader.src = "./assets/paulogo.svg"
+  logoHeader.href = "./index.html";
   const divMenuHeader = document.createElement("div");
   divMenuHeader.className = "icons__diversion";
   const menuHeader = document.createElement("p");
   menuHeader.className = "header__menu";
-  menuHeader.textContent = "Home";
+  const menuLink = document.createElement("a");
+  menuLink.href = "./index.html";
+  menuLink.textContent = "Home";
+  menuHeader.append(menuLink);
   const menuHeader2 = document.createElement("p");
   menuHeader2.className = "header__menu2";
   menuHeader2.textContent = "Portfolio";
   const menuHeader3 = document.createElement("p");
   menuHeader3.className = "header__menu3";
-  menuHeader3.textContent = "About";
+  const galleryLink = document.createElement("a");
+  galleryLink.href = "./gallery.html";
+  galleryLink.textContent = "Gallery";
+  menuHeader3.append(galleryLink);
 
   const lightbtn = document.createElement("button");
   lightbtn.className = "toggle__btn";
