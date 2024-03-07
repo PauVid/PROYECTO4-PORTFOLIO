@@ -123,11 +123,6 @@ a{
   cursor: pointer;
 }
 
-/* .light__mode:hover {
-  transform: scale(1.1);
-  rotate: 120deg;
-} */
-
 .dark__mode{
   background: url("./assets/dark.svg");
   background-size: cover;
