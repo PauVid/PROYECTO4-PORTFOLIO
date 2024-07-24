@@ -380,8 +380,8 @@ a{
   transition: all .23s;
 }
 
-.secondSectionBanner:hover,
-.secondSectionImage:hover,
+/* .secondSectionBanner:hover,
+.secondSectionImage:hover, */
 .header__logo:hover,
 .header__icons:hover,
 .thirdSectionBanner:hover,

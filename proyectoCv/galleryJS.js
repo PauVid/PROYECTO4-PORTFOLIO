@@ -129,34 +129,6 @@ const headerCv = () => {
 };
 
 const gallery = () => {
-   
-    const images = [
-        "kL3u4Tqfn1s",
-        "yVUQlyRlJSw",
-        "7H77FWkK_x4",
-        "r7YZXv5f5cc",
-        "KQ75n3P8EJA",
-        "psdV2Rl-GvU",
-        "gGIJGnpMZfo",
-        "j7AMlh2MMHc",
-        "U3cctUBucn0",
-        "SMKR4zjSdd4",
-        "psdV2Rl-GvU",
-        "K-94QEMm3vo",
-        "j7AMlh2MMHc",
-        "D68ADLeMh5Q",
-        "BzuUDHCi_vo",
-        "ua2vQnsn_x0",
-        "TGOGwgPR1_Q",
-        "oqStl2L5oxI",
-        "XazoYQRnDZo",
-        "YfgE8WCcZsQ",
-        "NpMWgJ1_Ohk",
-        "SU35VU5de1o",
-        "TbUL8w1C-0s",
-        "bOvvgayPCyI",
-    ];
-
 
     const page = document.querySelector(".gallery");
 
@@ -236,7 +208,46 @@ const scrollEffect = () => {
 
 }
 
+
+const accesKey = "BHMev0wXRyHqojE13-VV7OJmQFRkP1f_GxT3K3z5CA0";
+const endPoint = 'https://api.unsplash.com/search/photos';
+
+async function getImages(query){
+    let response = await fetch(endPoint + '?query=' + query + '&client_id=' + accesKey);
+    let jsonResponse = await response.json();
+    let imagesList = await jsonResponse.results;
+
+    function createImages(imagesList){
+
+      const page = document.querySelector(".gallery");
+
+      const galleryTrack = document.createElement("div")
+      galleryTrack.className = "gallery-track";
+
+      for(let i = 0 ; i < imagesList.length ; i++ ) {
+
+      const galleryCard = document.createElement("div");
+      galleryCard.className = "card";
+
+      const galleryCardWrapper = document.createElement("div");
+      galleryCardWrapper.className = "card-image-wrapper";
+
+      const image = document.createElement('img');
+      image.src = imagesList[i].urls.thumb;
+      document.body.appendChild(image);
+
+      galleryCardWrapper.append(image);
+      galleryCard.append(galleryCardWrapper);
+      galleryTrack.append(galleryCard);
+      }  
+
+      page.append(galleryTrack);
+  }
+  createImages(imagesList);
+}
+
+
 headerCv();
-gallery();
+getImages('sunset');
 scrollEffect();
 toggleMode();
