@@ -281,7 +281,7 @@ a{
   display: flex;
   justify-content: center;
   gap: var(--pv-gap-m);
-  margin-top: var(--pv-margin-xl);
+  margin: var(--pv-margin-xl) 0;
 }
 
 .secondSectionBGroup {
@@ -579,9 +579,9 @@ span:last-of-type {
 }
 
 .textEffect {
-  position: relative;
-    left: 50px;
-    margin: auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
     font-size: 25px;
     color: white;
     font-family: 'Kameron';
