@@ -2,7 +2,9 @@ import "./principal.css"
 import { aboutMe } from "./aboutMe";
 import Education from "./education";
 import Experience from "./experience";
-import Projects from "./projects";
+import Projects from "./src/components/Projects/projects";
+
+
 
 let show = "Experience";
 

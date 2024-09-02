@@ -1,30 +1,3 @@
-// import Header from "./header";
-// import Footer from "./footer";
-// import { principal, addPrincipalListeners } from "./principal";
-// import { addAboutListeners } from "./aboutMe";
-
-// const render = () => {
-//   document.querySelector("#app").innerHTML = `
-//   ${Header()}
-//   ${principal()}
-//   ${Footer()}
-//   `;
-// };
-
-// render()
-// addAboutListeners()
-// addPrincipalListeners()
-
-
-// GRACIAS AL BUENO USO DE LOS COMPONENTES Y DE NUESTROS DATOS NUESTRO TRABAJO DE "CAMBIO", "ARREGLO" O AMPLIACIÓN
-// SE VERÁ MUY REDUCIO Y MUCHO MÁS ACCESIBLE
-
-// CAMBIAR ALGO EN UN PROYECTO GESTIONADO
-// EN COMPONENTES O AÑADARILO NOS RESULTARÁ
-// MUCHO MÁS SENCILLO A LA LARGA, ESTAMOS
-// UTILIZANDO MEJORES PRACTICAS Y ES UN
-// PROYECTO MUCHO MÁS ESCALABLE COMPARADO
-// CON CÓMO LOS REALIZABAMOS HASTA AHORA
 
 const toggleMode = () => {
 
@@ -133,7 +106,7 @@ const headerCv = () => {
   const menuHeader3 = document.createElement("p");
   menuHeader3.className = "header__menu3";
   const galleryLink = document.createElement("a");
-  galleryLink.href = "./gallery.html";
+  galleryLink.href = "./src/components/Gallery/gallery.html";
   galleryLink.textContent = "Gallery";
   menuHeader3.append(galleryLink);
 
